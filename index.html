@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Note Taking App</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <!-- App CSS -->
+  <link rel="stylesheet" href="styles.css">
+  <!-- Manifest for PWA -->
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+
+  <div class="container">
+    <h1>Note Taking App</h1>
+
+    <div class="note-input">
+      <textarea id="new-note" rows="4" placeholder="Type your note here..."></textarea>
+      <button id="add-note-btn" class="button">Add Note</button>
+    </div>
+
+    <h2>Your Notes</h2>
+    <ul id="notes-list"></ul>
+
+  </div>
+
+  <!-- Service Worker Registration -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js');
+    }
+  </script>
+
+  <!-- App JavaScript -->
+  <script src="app.js"></script>
+</body>
+</html>
