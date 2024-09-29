@@ -8,25 +8,61 @@
 body {
   font-family: 'Roboto', sans-serif;
   background-color: #f7f9fc;
-  padding: 20px; Adjust size as needed */
+  padding: 20px;
 }
 
-
 .container {
-  max-width: 600px;
+  display: flex;
+  flex-direction: row;
+  max-width: 1000px;
   margin: 0 auto;
+}
+
+.sidebar {
+  width: 30%;
+  background-color: #f0f0f0;
   padding: 20px;
-  background-color: white;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-h1 {
-  text-align: center;
-  margin-bottom: 20px;
+.sidebar h2 {
   font-family: 'Nunito', sans-serif;
   font-weight: 700;
   color: #4A90E2;
+}
+
+#notes-list {
+  list-style: none;
+  padding: 0;
+}
+
+.note-item {
+  background-color: white;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.note-item:hover {
+  background-color: #e0e0e0;
+}
+
+.note-item-title {
+  font-weight: bold;
+}
+
+.note-item-preview {
+  font-size: 14px;
+  color: #666;
+  display: none;
+}
+
+.note-editor {
+  width: 70%;
+  padding: 20px;
 }
 
 .note-input {
@@ -35,7 +71,7 @@ h1 {
   margin-bottom: 20px;
 }
 
-textarea {
+input, textarea {
   font-size: 16px;
   padding: 10px;
   border-radius: 4px;
@@ -58,47 +94,6 @@ textarea {
   background-color: #0d6a52;
 }
 
-#notes-list {
-  list-style: none;
-}
-
-.note {
-  background-color: #f0f0f0;
-  padding: 15px;
-  margin-bottom: 10px;
-  border-radius: 4px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.delete-btn {
-  background-color: red;
-  color: white;
-  border: none;
-  padding: 5px 10px;
-  cursor: pointer;
-  border-radius: 4px;
-}
-
-.delete-btn:hover {
-  background-color: darkred;
-}
-
-/* Make app responsive */
-@media (max-width: 768px) {
-  .container {
-    padding: 15px;
-    max-width: 100%;
-  }
-
-  textarea {
-    font-size: 14px;
-    padding: 8px;
-  }
-
-  .button {
-    font-size: 16px;
-    padding: 8px 16px;
-  }
+#toggle-preview {
+  margin-top: 10px;
 }
