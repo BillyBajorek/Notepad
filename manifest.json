@@ -2,7 +2,7 @@
   "name": "Note Taking App",
   "short_name": "Notes",
   "start_url": "/Notepad/",
-  "display": "standalone",
+  "display": "fullscreen",
   "background_color": "#ffffff",
   "theme_color": "#11846b",
   "icons": [
