@@ -7,17 +7,19 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
   <!-- App CSS -->
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="/NotePad/styles.css">
   <!-- Manifest for PWA -->
-  <link rel="manifest" href="manifest.json">
+  <link rel="manifest" href="/NotePad/manifest.json">
   <!-- Favicon -->
-  <link rel="icon" href="/images/note.png" type="image/png">
+  <link rel="icon" href="/NotePad/images/note.png" type="image/png">
 </head>
 <body>
-
+  
   <div class="container">
-    <button id="toggle-notes-btn" class="button mobile-only">Show Notes</button> <!-- Button to show/hide notes on mobile -->
-    <div class="sidebar" id="sidebar">
+    <!-- Optional Fullscreen Button for User Interaction -->
+    <button id="fullscreen-btn" class="button mobile-only">Go Fullscreen</button> <!-- Visible only on mobile -->
+
+    <div class="sidebar">
       <h2>My Notes</h2>
       <ul id="notes-list"></ul>
     </div>
@@ -40,12 +42,50 @@
   <!-- Service Worker Registration -->
   <script>
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/sw.js');
+      navigator.serviceWorker.register('/NotePad/sw.js');
     }
   </script>
 
+  <!-- Fullscreen Functionality for Mobile -->
+  <script>
+    (function() {
+      // Detect if the user is on a mobile device
+      const isMobile = /Mobi|Android/i.test(navigator.userAgent);
+
+      if (isMobile) {
+        const body = document.querySelector("body");
+
+        // Automatically request fullscreen if possible
+        if (body.requestFullscreen) {
+          body.requestFullscreen();
+        } else if (body.webkitRequestFullscreen) {
+          body.webkitRequestFullscreen();
+        } else if (body.mozRequestFullScreen) {
+          body.mozRequestFullScreen();
+        } else if (body.msRequestFullscreen) {
+          body.msRequestFullscreen();
+        }
+      }
+    })();
+
+    // Manual Fullscreen Button for user-triggered fullscreen
+    document.getElementById('fullscreen-btn').addEventListener('click', function() {
+      const body = document.querySelector("body");
+
+      if (body.requestFullscreen) {
+        body.requestFullscreen();
+      } else if (body.webkitRequestFullscreen) {
+        body.webkitRequestFullscreen();
+      } else if (body.mozRequestFullScreen) {
+        body.mozRequestFullScreen();
+      } else if (body.msRequestFullscreen) {
+        body.msRequestFullscreen();
+      }
+    });
+  </script>
+
   <!-- App JavaScript -->
-  <script src="app.js"></script>
+  <script src="/NotePad/app.js"></script>
 </body>
 </html>
 
