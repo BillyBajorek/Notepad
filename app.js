@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const noteTitleInput = document.getElementById('note-title');
   const notesList = document.getElementById('notes-list');
   const togglePreviewCheckbox = document.getElementById('toggle-preview');
+  const toggleNotesBtn = document.getElementById('toggle-notes-btn');
+  const sidebar = document.getElementById('sidebar');
 
   // Load notes from localStorage
   let notes = JSON.parse(localStorage.getItem('notes')) || [];
@@ -52,6 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const note = notes[index];
     noteTitleInput.value = note.title;
     newNoteInput.value = note.content;
+    hideNotesOnMobile(); // Hide the notes sidebar after clicking on mobile
   }
 
   // Update localStorage
@@ -66,5 +69,24 @@ document.addEventListener('DOMContentLoaded', () => {
       preview.style.display = event.target.checked ? 'block' : 'none';
     });
   });
+
+  // Show or hide the notes on mobile
+  toggleNotesBtn.addEventListener('click', () => {
+    if (sidebar.style.display === 'none' || sidebar.style.display === '') {
+      sidebar.style.display = 'block';
+      toggleNotesBtn.textContent = 'Hide Notes';
+    } else {
+      sidebar.style.display = 'none';
+      toggleNotesBtn.textContent = 'Show Notes';
+    }
+  });
+
+  function hideNotesOnMobile() {
+    if (window.innerWidth <= 768) {
+      sidebar.style.display = 'none';
+      toggleNotesBtn.textContent = 'Show Notes';
+    }
+  }
 });
+
 
