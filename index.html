@@ -16,16 +16,25 @@
 <body>
 
   <div class="container">
-    <h1>Note Taking App</h1>
-
-    <div class="note-input">
-      <textarea id="new-note" rows="4" placeholder="Type your note here..."></textarea>
-      <button id="add-note-btn" class="button">Add Note</button>
+    <div class="sidebar">
+      <h2>My Notes</h2>
+      <ul id="notes-list"></ul>
     </div>
 
-    <h2>Your Notes</h2>
-    <ul id="notes-list"></ul>
+    <div class="note-editor">
+      <h1>Note Taking App</h1>
+      <div class="note-input">
+        <input id="note-title" type="text" placeholder="Note title..." />
+        <textarea id="new-note" rows="4" placeholder="Type your note here..."></textarea>
+        <button id="add-note-btn" class="button">Add Note</button>
+      </div>
 
+      <div>
+        <label>
+          <input type="checkbox" id="toggle-preview"> Show preview
+        </label>
+      </div>
+    </div>
   </div>
 
   <!-- Service Worker Registration -->
