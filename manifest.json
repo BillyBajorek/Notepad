@@ -1,7 +1,7 @@
 {
   "name": "Note Taking App",
   "short_name": "Notes",
-  "start_url": "/",
+  "start_url": "/Notepad/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#11846b",
