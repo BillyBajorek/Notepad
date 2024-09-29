@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const notePreview = document.createElement('p');
       notePreview.className = 'note-item-preview';
-      notePreview.textContent = note.content.substring(0, 50) + (note.content.length > 50 ? '...' : '');
+      notePreview.textContent = note.content;
 
       noteItem.appendChild(noteTitle);
       noteItem.appendChild(notePreview);
