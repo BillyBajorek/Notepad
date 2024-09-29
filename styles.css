@@ -8,8 +8,9 @@
 body {
   font-family: 'Roboto', sans-serif;
   background-color: #f7f9fc;
-  padding: 20px;
+  padding: 20px; Adjust size as needed */
 }
+
 
 .container {
   max-width: 600px;
