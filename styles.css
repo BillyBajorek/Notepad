@@ -136,31 +136,14 @@ textarea {
   margin-top: 10px;
 }
 
-/* Hide sidebar by default on mobile */
+/* Hide fullscreen button by default, show it only on mobile */
+.mobile-only {
+  display: none;
+}
+
 @media (max-width: 768px) {
-  .sidebar {
-    display: none;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 100;
-    height: 100%;
-    background-color: #f0f0f0;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  }
-
-  .note-editor {
-    width: 100%;
-  }
-
   .mobile-only {
     display: block;
     margin-bottom: 10px;
   }
-}
-
-/* Make sure the toggle button only shows on mobile */
-.mobile-only {
-  display: none;
 }
