@@ -7,17 +7,17 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
   <!-- App CSS -->
-  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/NotePad/styles.css">
   <!-- Manifest for PWA -->
-  <link rel="manifest" href="/manifest.json">
+  <link rel="manifest" href="/NotePad/manifest.json">
   <!-- Favicon -->
-  <link rel="icon" href="/images/note.png" type="image/png">
+  <link rel="icon" href="/NotePad/images/note.png" type="image/png">
 </head>
 <body>
   
   <div class="container">
-    <!-- Optional Fullscreen Button for User Interaction -->
-    <button id="fullscreen-btn" class="button mobile-only">Go Fullscreen</button> <!-- Visible only on mobile -->
+    <!-- Fullscreen button only visible on mobile -->
+    <button id="fullscreen-btn" class="button mobile-only">Go Fullscreen</button>
 
     <div class="sidebar">
       <h2>My Notes</h2>
@@ -46,16 +46,15 @@
     }
   </script>
 
-  <!-- Fullscreen Functionality for Mobile -->
+  <!-- Fullscreen Functionality -->
   <script>
     (function() {
-      // Detect if the user is on a mobile device
       const isMobile = /Mobi|Android/i.test(navigator.userAgent);
 
       if (isMobile) {
         const body = document.querySelector("body");
 
-        // Automatically request fullscreen if possible
+        // Automatically request fullscreen
         if (body.requestFullscreen) {
           body.requestFullscreen();
         } else if (body.webkitRequestFullscreen) {
@@ -68,7 +67,7 @@
       }
     })();
 
-    // Manual Fullscreen Button for user-triggered fullscreen
+    // Fullscreen button functionality
     document.getElementById('fullscreen-btn').addEventListener('click', function() {
       const body = document.querySelector("body");
 
@@ -88,6 +87,5 @@
   <script src="/NotePad/app.js"></script>
 </body>
 </html>
-
 
 
